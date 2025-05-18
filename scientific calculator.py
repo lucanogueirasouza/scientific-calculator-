@@ -1,326 +1,325 @@
 import os
 from time import sleep
 
-def limpar_tela():
-    os.system(
-        "Cls"
-        )
+def clear_screen():
+    os.system("cls")
 
-def pausa():
+def pause():
     print(
-        "Calculando..."
-        )
+        "Calculating..."
+    )
     sleep(1.5)
 
-def voltar_ao_menu():
-    opcao = input("" \
-    "\nDeseja voltar ao menu principal? (S/N): "
+def back_to_menu():
+    option = input(
+        "\nDo you want to return to the main menu? (Y/N): "
     ).strip().lower()
-    return opcao == 's'
+    return option == 'y'
 
-def soma():
+def addition():
     print(
-        "\n-=-=-=- CALCULADORA DE SOMA -=-=-=-\n"
-        )
+        "\n-=-=-=- ADDITION CALCULATOR -=-=-=-\n"
+    )
     total = 0
     while True:
         total += float(input(
-            "Digite um número para somar: "
-            ))
+            "Enter a number to add: "
+        ))
         if input(
-            "Deseja adicionar mais um número? (S/N): "
-            ).strip().lower() == 'n':
+            "Do you want to add another number? (Y/N): "
+        ).strip().lower() == 'n':
             break
-    pausa()
+    pause()
     print(
-        f"\nO resultado da soma é: {total}\n"
-        )
+        f"\nThe result of the addition is: {total}\n"
+    )
 
-def subtracao():
+def subtraction():
     print(
-        "\n-=-=- CALCULADORA DE SUBTRAÇÃO -=-=-\n"
-        )
-    resultado = float(input(
-        "Digite o primeiro número: "
-        ))
+        "\n-=-=- SUBTRACTION CALCULATOR -=-=-\n"
+    )
+    result = float(input(
+        "Enter the first number: "
+    ))
     while input(
-        "Deseja subtrair outro número? (S/N): "
-        ).strip().lower() == "s":
-        resultado -= float(input(
-            "Digite o número que será subtraído: "
-            ))
-    pausa()
+        "Do you want to subtract another number? (Y/N): "
+    ).strip().lower() == "y":
+        result -= float(input(
+            "Enter the number to subtract: "
+        ))
+    pause()
     print(
-        f"\nO resultado da subtração é: {resultado}\n"
-        )
+        f"\nThe result of the subtraction is: {result}\n"
+    )
 
-def multiplicacao():
+def multiplication():
     print(
-        "\n-=-=- CALCULADORA DE MULTIPLICAÇÃO -=-=-\n"
-        )
-    resultado = float(input(
-        "Digite o primeiro número: "
-        ))
+        "\n-=-=- MULTIPLICATION CALCULATOR -=-=-\n"
+    )
+    result = float(input(
+        "Enter the first number: "
+    ))
     while input(
-        "Deseja multiplicar outro número? (S/N): "
-        ).strip().lower() == 's':
-        resultado *= float(input("Digite o próximo número: "))
-    pausa()
+        "Do you want to multiply by another number? (Y/N): "
+    ).strip().lower() == 'y':
+        result *= float(input("Enter the next number: "))
+    pause()
     print(
-        f"\nO resultado da multiplicação é: {resultado}\n"
-        )
+        f"\nThe result of the multiplication is: {result}\n"
+    )
 
-def divisao():
+def division():
     print(
-        "\n-=-=- CALCULADORA DE DIVISÃO -=-=-\n"
-        )
-    resultado = float(input(
-        "Digite o primeiro número: "
-        ))
+        "\n-=-=- DIVISION CALCULATOR -=-=-\n"
+    )
+    result = float(input(
+        "Enter the first number: "
+    ))
     while input(
-        "Deseja dividir por outro número? (S/N): "
-        ).strip().lower() == 's':
+        "Do you want to divide by another number? (Y/N): "
+    ).strip().lower() == 'y':
         divisor = float(input(
-            "Digite o divisor: "
-            ))
+            "Enter the divisor: "
+        ))
         if divisor != 0:
-            resultado /= divisor
+            result /= divisor
         else:
             print(
-                "Erro: divisão por zero!"
-                )
-    pausa()
+                "Error: division by zero!"
+            )
+    pause()
     print(
-        f"\nO resultado da divisão é: {resultado}\n"
-        )
+        f"\nThe result of the division is: {result}\n"
+    )
 
-def exponenciacao():
+def exponentiation():
     print(
-        "\n-=-=- CALCULADORA DE EXPONENCIAÇÃO -=-=-\n"
-        )
+        "\n-=-=- EXPONENTIATION CALCULATOR -=-=-\n"
+    )
     base = float(input(
-        "Digite a base: "
-        ))
-    expoente = float(input(
-        "Digite o expoente: "
-        ))
-    resultado = base ** expoente
-    pausa()
+        "Enter the base: "
+    ))
+    exponent = float(input(
+        "Enter the exponent: "
+    ))
+    result = base ** exponent
+    pause()
     print(
-        f"O resultado da exponenciação é: {resultado}"
-        )
+        f"The result of the exponentiation is: {result}"
+    )
 
-def tabuada():
+def multiplication_table():
     print(
-        "\n-=-=- TABUADA -=-=-\n"
-        )
-    numero = int(input(
-        "Digite um número: "
-        ))
+        "\n-=-=- MULTIPLICATION TABLE -=-=-\n"
+    )
+    number = int(input(
+        "Enter a number: "
+    ))
     for i in range(1, 11):
         print(
-            f"{numero} x {i} = {numero * i}"
-            )
+            f"{number} x {i} = {number * i}"
+        )
 
-def calcular_porcentagem():
+def calculate_percentage():
     print(
-        "\n-=-=- CALCULADORA DE PORCENTAGEM -=-=-\n"
-        )
+        "\n-=-=- PERCENTAGE CALCULATOR -=-=-\n"
+    )
     print(
-        "[1] - Apenas porcentagem\n[2] - Desconto\n[3] - Juros"
-        )
-    tipo = int(input(
-        "Escolha: "
+        "[1] - Simple percentage\n[2] - Discount\n[3] - Interest"
+    )
+    type_ = int(input(
+        "Choose: "
+    ))
+
+    if type_ == 1:
+        value = float(input(
+            "Enter the value: "
         ))
-
-    if tipo == 1:
-        valor = float(input(
-            "Digite o valor: "
-            ))
-        percentual = float(input(
-            "Digite a porcentagem: "
-            ))
-        resultado = (percentual / 100) * valor
-        pausa()
+        percentage = float(input(
+            "Enter the percentage: "
+        ))
+        result = (percentage / 100) * value
+        pause()
         print(
-            f"{percentual}% de {valor} é {resultado}"
-            )
-
-    elif tipo == 2:
-        valor = float(input(
-            "Digite o valor do produto: "
-            ))
-        taxa = float(input(
-            "Digite a taxa (%): "
-            )) / 100
-        tempo = int(input(
-            "Digite o tempo (meses): "
-            ))
-        juros = valor * taxa * tempo
-        total = valor + juros
-        pausa()
-        print(
-            f"Juros: R${juros:.2f}, Total: R${total:.2f}"
-            )
-
-    elif tipo == 3:
-        valor = float(input(
-            "Digite o valor original: "
-            ))
-        taxa = float(input(
-            "Digite a taxa de desconto (%): "
-            )) / 100
-        tempo = int(input(
-            "Digite o tempo (meses): "
-            ))
-        desconto = valor * taxa * tempo
-        final = valor - desconto
-        pausa()
-        print(
-            f"Desconto: R${desconto:.2f}, Valor com desconto: R${final:.2f}"
-            )
-
-def potencia():
-    print(
-        "\n-=-=- POTENCIAÇÃO -=-=-\n"
+            f"{percentage}% of {value} is {result}"
         )
+
+    elif type_ == 2:
+        value = float(input(
+            "Enter the product value: "
+        ))
+        rate = float(input(
+            "Enter the rate (%): "
+        )) / 100
+        time = int(input(
+            "Enter the time (months): "
+        ))
+        interest = value * rate * time
+        total = value + interest
+        pause()
+        print(
+            f"Interest: ${interest:.2f}, Total: ${total:.2f}"
+        )
+
+    elif type_ == 3:
+        value = float(input(
+            "Enter the original value: "
+        ))
+        rate = float(input(
+            "Enter the discount rate (%): "
+        )) / 100
+        time = int(input(
+            "Enter the time (months): "
+        ))
+        discount = value * rate * time
+        final = value - discount
+        pause()
+        print(
+            f"Discount: ${discount:.2f}, Value after discount: ${final:.2f}"
+        )
+
+def power():
+    print(
+        "\n-=-=- POWER CALCULATOR -=-=-\n"
+    )
     base = float(input(
-        "Digite a base: "
-        ))
-    expoente = float(input(
-        "Digite o expoente: "
-        ))
-    resultado = base ** expoente
-    pausa()
+        "Enter the base: "
+    ))
+    exponent = float(input(
+        "Enter the exponent: "
+    ))
+    result = base ** exponent
+    pause()
     print(
-        f"Resultado: {resultado}"
-        )
+        f"Result: {result}"
+    )
 
 def area():
     print(
-        "\n-=-=- CÁLCULO DE ÁREA -=-=-\n"
-        )
+        "\n-=-=- AREA CALCULATOR -=-=-\n"
+    )
     print(
-        "[1] Triângulo\n[2] Quadrado\n[3] Trapézio\n[4] Círculo\n[5] Losango"
-        )
-    opcao = int(input(
-        "Escolha: "
-        ))
+        "[1] Triangle\n[2] Square\n[3] Trapezoid\n[4] Circle\n[5] Rhombus"
+    )
+    option = int(input(
+        "Choose: "
+    ))
 
-    if opcao == 1:
+    if option == 1:
         base = float(input(
             "Base: "
-            ))
-        altura = float(input(
-            "Altura: "
-            ))
-        print(
-            f"Área do triângulo: {(base * altura) / 2}"
-            )
-
-    elif opcao == 2:
-        lado = float(input(
-            "Lado do quadrado: "
-            ))
-        print(
-            f"Área do quadrado: {lado ** 2}"
-            )
-
-    elif opcao == 3:
-        b_menor = float(input(
-            "Base menor: "
-            ))
-        b_maior = float(input(
-            "Base maior: "
-            ))
-        altura = float(input(
-            "Altura: "
-            ))
-        print(
-            f"Área do trapézio: {((b_maior + b_menor) * altura) / 2}"
-            )
-
-    elif opcao == 4:
-        raio = float(input(
-            "Raio: "
-            ))
-        print(
-            f"Área do círculo: {3.14 * (raio ** 2):.2f}"
-            )
-
-    elif opcao == 5:
-        d_menor = float(input(
-            "Diagonal menor: "
-            ))
-        d_maior = float(input(
-            "Diagonal maior: "
-            ))
-        print(
-            f"Área do losango: {(d_maior * d_menor) / 2}"
-            )
-
-def radiciacao():
-    print(
-        "\n-=-=- RADICIAÇÃO -=-=-\n"
-        )
-    numero = float(input(
-        "Digite o número: "
         ))
-    indice = float(input(
-        "Digite o índice (ex: 2 para raiz quadrada): "
+        height = float(input(
+            "Height: "
         ))
-    raiz = numero ** (1 / indice)
-    pausa()
-    print(
-        f"A raiz {indice} de {numero} é: {raiz}"
+        print(
+            f"Area of the triangle: {(base * height) / 2}"
         )
+
+    elif option == 2:
+        side = float(input(
+            "Side of the square: "
+        ))
+        print(
+            f"Area of the square: {side ** 2}"
+        )
+
+    elif option == 3:
+        smaller_base = float(input(
+            "Smaller base: "
+        ))
+        larger_base = float(input(
+            "Larger base: "
+        ))
+        height = float(input(
+            "Height: "
+        ))
+        print(
+            f"Area of the trapezoid: {((larger_base + smaller_base) * height) / 2}"
+        )
+
+    elif option == 4:
+        radius = float(input(
+            "Radius: "
+        ))
+        print(
+            f"Area of the circle: {3.14 * (radius ** 2):.2f}"
+        )
+
+    elif option == 5:
+        smaller_diag = float(input(
+            "Smaller diagonal: "
+        ))
+        larger_diag = float(input(
+            "Larger diagonal: "
+        ))
+        print(
+            f"Area of the rhombus: {(larger_diag * smaller_diag) / 2}"
+        )
+
+def root_calculation():
+    print(
+        "\n-=-=- ROOT CALCULATOR -=-=-\n"
+    )
+    number = float(input(
+        "Enter the number: "
+    ))
+    index = float(input(
+        "Enter the index (e.g., 2 for square root): "
+    ))
+    root = number ** (1 / index)
+    pause()
+    print(
+        f"The {index} root of {number} is: {root}"
+    )
 
 while True:
-    limpar_tela()
+    clear_screen()
     print(
-        "\n===== CALCULADORA CIENTÍFICA ====="
-        )
+        "\n===== SCIENTIFIC CALCULATOR ====="
+    )
     print(
-        "[1] Soma\n[2] Subtração\n[3] Multiplicação\n[4] Divisão\n[5] Exponenciação\n[6] Tabuada\n[7] Porcentagem\n[8] Potenciação\n[9] Área\n[10] Radiciação\n[0] Sair"
-        )
+        "[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division\n[5] Exponentiation\n[6] Multiplication Table\n[7] Percentage\n[8] Power\n[9] Area\n[10] Root\n[0] Exit"
+    )
 
     try:
-        escolha = int(input(
-            "Escolha uma opção: "
-            ))
-        limpar_tela()
+        choice = int(input(
+            "Choose an option: "
+        ))
+        clear_screen()
 
-        if escolha == 0:
+        if choice == 0:
             break
-        elif escolha == 1:
-            soma()
-        elif escolha == 2:
-            subtracao()
-        elif escolha == 3:
-            multiplicacao()
-        elif escolha == 4:
-            divisao()
-        elif escolha == 5:
-            exponenciacao()
-        elif escolha == 6:
-            tabuada()
-        elif escolha == 7:
-            calcular_porcentagem()
-        elif escolha == 8:
-            potencia()
-        elif escolha == 9:
+        elif choice == 1:
+            addition()
+        elif choice == 2:
+            subtraction()
+        elif choice == 3:
+            multiplication()
+        elif choice == 4:
+            division()
+        elif choice == 5:
+            exponentiation()
+        elif choice == 6:
+            multiplication_table()
+        elif choice == 7:
+            calculate_percentage()
+        elif choice == 8:
+            power()
+        elif choice == 9:
             area()
-        elif escolha == 10:
-            radiciacao()
+        elif choice == 10:
+            root_calculation()
         else:
             print(
-                "Opção inválida!"
-                )
+                "Invalid option!"
+            )
 
-        if not voltar_ao_menu():
+        if not back_to_menu():
             break
 
     except ValueError:
         print(
-            "Por favor, digite uma opção válida."
-            )
+            "Please enter a valid option."
+        )
+        
